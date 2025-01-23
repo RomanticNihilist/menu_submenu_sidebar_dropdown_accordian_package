@@ -1,0 +1,3 @@
+library menu_submenu_sidebar_dropdown_accordian_package;
+
+export 'src/menu_submenu_sidebar_dropdown_accordian_package.dart';
