@@ -66,6 +66,7 @@ class _MenuWithSubMenuState extends State<MenuWithSubMenu> {
                   leading: Icon(menuItem.icon),
                   children: menuItem.subItems!.map((subItem) {
                     return ListTile(
+                      shape: OvalBorder(),
                       title: Text(subItem.title),
                       trailing: Icon(subItem.icon),
                       onTap: () {
