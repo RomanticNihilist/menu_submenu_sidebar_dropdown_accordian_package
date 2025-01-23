@@ -92,7 +92,7 @@ class _MenuWithSubMenuState extends State<MenuWithSubMenu> {
                           widget.themeMode,
                           widget.updateTheme,
                           widget.updateColorScheme,
-                          widget.menuItems
+                          menuItems
                       );
                     }
                 ),
