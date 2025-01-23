@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'string_to_widget_map.dart';
 
 
 class MenuItem {
@@ -24,16 +25,11 @@ class MenuItem {
 
 
 class MenuWithSubMenu extends StatefulWidget {
-  // final Widget currentScreen;
-  // final bool isDarkMode;
   final ColorScheme colorScheme;
   final List<MenuItem> menuItems;
   final ThemeMode themeMode;
   final Function(bool) updateTheme;
   final Function(ColorScheme) updateColorScheme;
-  // final Function(Widget) onMenuItemSelected;
-  //final Function(Widget) onMenuItemSelected; // Callback function
-  //const MenuWithSubMenu(this.onMenuItemSelected, {super.key});
   const MenuWithSubMenu(
       {
         super.key,
@@ -42,7 +38,6 @@ class MenuWithSubMenu extends StatefulWidget {
         required this.menuItems,
         required this.updateTheme,
         required this.updateColorScheme,
-        // required this.onMenuItemSelected
       }
       );
 
