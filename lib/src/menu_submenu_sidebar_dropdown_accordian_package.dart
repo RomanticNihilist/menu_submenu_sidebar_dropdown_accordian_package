@@ -54,60 +54,54 @@ class _MenuWithSubMenuState extends State<MenuWithSubMenu> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset("assets/keross-logo.png"),
-        const SizedBox(height: 30,),
-        SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListView(
-              children: widget.menuItems.map((menuItem) {
-                if (menuItem.subItems != null && menuItem.subItems!.isNotEmpty) {
-                  return Card(
-                    child: ExpansionTile(
-                      title: Text(menuItem.title),
-                      leading: Icon(menuItem.icon),
-                      children: menuItem.subItems!.map((subItem) {
-                        return ListTile(
-                          shape: OvalBorder(),
-                          title: Text(subItem.title),
-                          trailing: Icon(subItem.icon),
-                          onTap: () {
-                            Navigator.pop(context);
-                            if (subItem.onTap != null) {
-                              // subItem.onTap!();
-                              //widget.onMenuItemSelected();
-                            }
-                          },
-                        );
-                      }).toList(),
-                    ),
-                  );
-                } else {
-                  return Card(
-                    child: ListTile(
-                        title: Text(menuItem.title),
-                        leading: Icon(menuItem.icon),
-                        onTap: () {
-                          openMenuSubmenuWidget(
-                              menuItem,
-                              context,
-                              widget.colorScheme,
-                              widget.themeMode,
-                              widget.updateTheme,
-                              widget.updateColorScheme,
-                              widget.menuItems
-                          );
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: widget.menuItems.map((menuItem) {
+            if (menuItem.subItems != null && menuItem.subItems!.isNotEmpty) {
+              return Card(
+                child: ExpansionTile(
+                  title: Text(menuItem.title),
+                  leading: Icon(menuItem.icon),
+                  children: menuItem.subItems!.map((subItem) {
+                    return ListTile(
+                      shape: OvalBorder(),
+                      title: Text(subItem.title),
+                      trailing: Icon(subItem.icon),
+                      onTap: () {
+                        Navigator.pop(context);
+                        if (subItem.onTap != null) {
+                          // subItem.onTap!();
+                          //widget.onMenuItemSelected();
                         }
-                    ),
-                  );
-                }
-              }).toList(),
-            ),
-          ),
+                      },
+                    );
+                  }).toList(),
+                ),
+              );
+            } else {
+              return Card(
+                child: ListTile(
+                    title: Text(menuItem.title),
+                    leading: Icon(menuItem.icon),
+                    onTap: () {
+                      openMenuSubmenuWidget(
+                          menuItem,
+                          context,
+                          widget.colorScheme,
+                          widget.themeMode,
+                          widget.updateTheme,
+                          widget.updateColorScheme,
+                          widget.menuItems
+                      );
+                    }
+                ),
+              );
+            }
+          }).toList(),
         ),
-      ],
+      ),
     );
   }
 }
