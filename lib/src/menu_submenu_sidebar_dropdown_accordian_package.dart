@@ -56,7 +56,7 @@ class _MenuWithSubMenuState extends State<MenuWithSubMenu> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(9.0),
+        padding: const EdgeInsets.all(10.0),
         child: ListView(
           children: widget.menuItems.map((menuItem) {
             if (menuItem.subItems != null && menuItem.subItems!.isNotEmpty) {
