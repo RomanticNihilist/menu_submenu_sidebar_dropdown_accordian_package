@@ -51,12 +51,11 @@ class MenuWithSubMenu extends StatefulWidget {
 }
 
 class _MenuWithSubMenuState extends State<MenuWithSubMenu> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(30.0),
         child: ListView(
           children: widget.menuItems.map((menuItem) {
             if (menuItem.subItems != null && menuItem.subItems!.isNotEmpty) {
@@ -66,7 +65,9 @@ class _MenuWithSubMenuState extends State<MenuWithSubMenu> {
                   leading: Icon(menuItem.icon),
                   children: menuItem.subItems!.map((subItem) {
                     return ListTile(
-                      shape: OvalBorder(),
+                      shape: OvalBorder(
+                        eccentricity: 5.0
+                      ),
                       title: Text(subItem.title),
                       trailing: Icon(subItem.icon),
                       onTap: () {
