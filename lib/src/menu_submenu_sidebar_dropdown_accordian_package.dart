@@ -80,6 +80,9 @@ class _MenuWithSubMenuState extends State<MenuWithSubMenu> {
               );
             } else {
               return Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)
+                ),
                 child: ListTile(
                     title: Text(menuItem.title),
                     leading: Icon(menuItem.icon),
